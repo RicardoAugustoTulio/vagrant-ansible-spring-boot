@@ -1,0 +1,11 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/ubuntu2004"
+  config.vm.box_version = "3.1.16"    
+  config.vm.hostname = "control-node"
+  config.vm.network "private_network", ip:"192.168.56.2" # Alterar a faixa de IP
+  config.vm.synced_folder ".", "/vagrant", type: "nfs" 
+
+  config.vm.provision "shell", inline: <<-SHELL
+    
+  SHELL
+end
